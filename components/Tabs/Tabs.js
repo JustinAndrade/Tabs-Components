@@ -29,7 +29,7 @@ class TabLink {
     });
 
     // Add a class named "tabs-link-selected" to this link
-    this.links.add('.tabs-link-selected');
+    this.element.add('.tabs-link-selected');
     console.log(this.element);
     
     // Call the select method on the item associated with this link
