@@ -20,20 +20,19 @@ class TabLink {
 
   select() {
     // Get all of the elements with the tabs-link class
-    const links = document.querySelectorAll('.tabs .tabs-link');
-    console.log(links);
+    const links = document.querySelectorAll('.tabs-link');
 
     // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
     Array.from(links).forEach(link => {
-      link.remove('.tabs-link-selected');
+      link.classList.remove('tabs-link-selected');
     });
 
     // Add a class named "tabs-link-selected" to this link
-    this.element.add('.tabs-link-selected');
+    this.element.classList.add('tabs-link-selected');
     console.log(this.element);
     
     // Call the select method on the item associated with this link
-    select(this.element);
+    this.element.select();
   }
 }
 
@@ -47,13 +46,12 @@ class TabItem {
   select() {
     // Select all ".tabs-item" elements from the DOM
     // const items;
-    const items = document.querySelectorAll('.tabs-items .tabs-item')
-    console.log(items);
+    const items = document.querySelectorAll('.tabs-item')
     // Remove the class "tabs-item-selected" from each element
-    items.remove('.tabs-item-selected');
+    items.classList.remove('tabs-item-selected');
     // Add a class named "tabs-item-selected" to this element
     //this.element;
-    this.element = this.items.add('tabs-item-selected');
+    this.element.classList.add('tabs-item-selected');
   }
 }
 
@@ -67,7 +65,7 @@ class TabItem {
 
 */
 
-links = document.querySelectorAll('.tabs .tabs-link');
+links = document.querySelectorAll('.tabs-link');
 console.log(links);
 
 links.forEach(link =>  new TabLink(link));
